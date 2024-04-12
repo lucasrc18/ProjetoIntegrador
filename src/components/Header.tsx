@@ -8,7 +8,7 @@ export default function Header(){
     const navigate = useNavigate();
 
     return (
-        <header>
+        <header id="main-header">
             <img onClick={ () => navigate("/") } src={ Icon } alt="" />
 
             <nav id="header-navbar">

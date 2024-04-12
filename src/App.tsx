@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import Home from "./pages/home";
+import Profile from "./pages/profile";
 
 import './global-styles.scss';
 
@@ -11,7 +11,7 @@ export default function App() {
         Component={Home}
         />     */}
 
-        <Home />
+        <Profile />
     </BrowserRouter>
   );
 }

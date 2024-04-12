@@ -1,0 +1,21 @@
+.progress-bar {
+    width: 180px;
+    height: 28px;
+
+    background: #F8F4FF;
+
+    display: block;
+
+    overflow: hidden;
+
+    padding: 6px 7px;
+    border-radius: 8px;
+}
+
+.inner-bar {
+    display: block;
+    
+    height: 100%;
+
+    border-radius: 4px;
+}
