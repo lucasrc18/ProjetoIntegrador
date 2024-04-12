@@ -1,8 +1,17 @@
-function App() {
+import { BrowserRouter } from "react-router-dom";
+import Home from "./pages/home";
+
+import './global-styles.scss';
+
+export default function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+      {/* <Route 
+        path="/"
+        Component={Home}
+        />     */}
+
+        <Home />
+    </BrowserRouter>
   );
 }
-
-export default App;
