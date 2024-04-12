@@ -1,0 +1,69 @@
+#profile-section {
+    padding: 2.6vh 3vw;
+
+    #profile-pic {
+        width: 170px; // Not responsive
+        height: 165px;
+    }
+}
+
+#profile-data {
+    border: 2px solid #fff;
+    border-radius: 22px;
+
+    background: #2D0F40;
+
+    display: flex;
+    color: #fff;
+
+    padding: 13px 13px;
+
+    gap: 20px;
+
+    #username {
+        color: #fff;
+        background: transparent;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        font-size: 1.38rem;
+        padding-bottom: 4px;
+    }
+
+    div {
+        font-size: 1.15rem;
+
+        #hp-sec, #xp-sec {
+            margin-top: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 12px;
+        }
+    
+        #lvl-money {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4px;
+
+            padding: 0 0;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                #money-icon {
+                    width: 17px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 512px) {
+    :root {
+        font-size: 12px;
+    }
+}

@@ -4,12 +4,16 @@ import './styles/progressbar.scss';
 
 type ProgressBarProps = HTMLAttributes<HTMLDivElement> & {
     bg: string,
-    progress: number
+    progress: number,
+    title?: string
 }
 
-export default function ProgressBar({bg, progress, ...props}: ProgressBarProps) {
-    const title = `Progresso: ${progress}%`;
-    
+export default function ProgressBar({bg, progress, title, ...props}: ProgressBarProps) {
+    if(!title)
+        title = `Progresso: ${progress}%`;
+    else
+        title = `${title}: ${progress}%`;
+
     return (
         <div title={title} className="progress-bar">
             <div 
