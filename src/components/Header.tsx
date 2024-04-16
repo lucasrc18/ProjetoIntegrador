@@ -12,16 +12,19 @@ export default function Header(){
             <img onClick={ () => navigate("/") } src={ Icon } alt="" />
 
             <nav id="header-navbar">
-                <a title="Visualizar todas suas tarefas">
+                <a id="tasks-page" title="Visualizar todas suas tarefas">
                     <p>Tarefas</p>
                 </a>
-                <a title="Ver seu perfil pessoal">
+
+                <a id="profile-page" title="Ver seu perfil pessoal">
                     <p>Perfil</p>
                 </a>
-                <a title="Ir para a loja">
+
+                <a id="store-page" title="Ir para a loja">
                     <p>Loja</p>
                 </a>
-                <a title="Ver todos os seus amigos">
+
+                <a id="social-page" title="Ver todos os seus amigos">
                     <p>Amigos</p>
                 </a>
             </nav>

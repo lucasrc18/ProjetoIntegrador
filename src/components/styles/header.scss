@@ -43,6 +43,14 @@ header#main-header {
             &:hover {
                 background: #180E1C;
             }
+
+            &.current {
+                background: #75538D;
+            }
+
+            &.current:hover {
+                background: #8c69a4;
+            }
         }
     }
 }
