@@ -1,0 +1,10 @@
+.RoutedLinkedButton {
+    &.current p:hover {
+        cursor: default;
+    }
+    
+    p::selection {
+        background: transparent;
+        outline: none;
+    }
+}

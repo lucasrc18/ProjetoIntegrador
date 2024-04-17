@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import RouteLinkedButton from './RouteLinkedButton';
 
 import Icon from './assets/Icon.png';
 
@@ -12,21 +13,21 @@ export default function Header(){
             <img onClick={ () => navigate("/") } src={ Icon } alt="" />
 
             <nav id="header-navbar">
-                <a id="tasks-page" title="Visualizar todas suas tarefas">
-                    <p>Tarefas</p>
-                </a>
+                <RouteLinkedButton route="/tasks" id="tasks-page" title="Visualizar todas suas tarefas">
+                    Tarefas
+                </RouteLinkedButton>
 
-                <a id="profile-page" title="Ver seu perfil pessoal">
-                    <p>Perfil</p>
-                </a>
+                <RouteLinkedButton id="profile-page" title="Ver seu perfil pessoal">
+                    Perfil
+                </RouteLinkedButton>
 
-                <a id="store-page" title="Ir para a loja">
-                    <p>Loja</p>
-                </a>
+                <RouteLinkedButton route="/store" id="store-page" title="Ir para a loja">
+                    Loja
+                </RouteLinkedButton>
 
-                <a id="social-page" title="Ver todos os seus amigos">
-                    <p>Amigos</p>
-                </a>
+                <RouteLinkedButton route="/social" id="social-page" title="Ver todos os seus amigos">
+                    Amigos
+                </RouteLinkedButton>
             </nav>
         </header>
     );

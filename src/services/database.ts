@@ -1,4 +1,4 @@
-import { get, ref, set, update } from 'firebase/database';
+import { child, get, ref, set, update } from 'firebase/database';
 
 import { DatabaseInstance } from './firebase';
 
@@ -7,13 +7,17 @@ export default {
         return ref(DatabaseInstance, path)
     },
 
-    set: function(path: string, value: unknown){
-        return set(this.ref(path), value)
+    set: async function(path: string, value: unknown){
+        return set(ref(DatabaseInstance, path), value)
     },
 
     get: get,
 
-    update: function(path: string, values: object){
-        return update(this.ref(path), values)
+    update: async function(path: string, values: object){
+        return update(ref(DatabaseInstance, path), values)
+    },
+    
+    child: function(path: string){
+        return child(ref(DatabaseInstance), path)
     }
 }

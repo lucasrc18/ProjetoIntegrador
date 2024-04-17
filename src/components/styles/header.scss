@@ -40,6 +40,10 @@ header#main-header {
 
             cursor: pointer;
 
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+
             &:hover {
                 background: #180E1C;
             }

@@ -1,6 +1,6 @@
 import database from '../services/database';
 
-const { set, get, ref } = database;
+const { set, get, ref, child } = database;
 
 type InventoryItem = {
     code: string,
@@ -46,7 +46,7 @@ export interface User {
     goals: Goals[]
 }
 
-export default async function createUser(name: string, email: string, passwd: string, username?: string) {
+export default function createUser(name: string, email: string, passwd: string, username?: string) {
     const user: User = {
         data: {
             username: username,
@@ -64,12 +64,23 @@ export default async function createUser(name: string, email: string, passwd: st
         inventory: [],
         tasks: [],
         goals: []
-    }
+    };
 
-    await set(`user-${
-        await get(ref(''))
-            .then(res => res.size)
-    }`, user)
+    const db_userid = user.data.username?.toLowerCase();
+
+    // verify if username is in use
+
+    let user_exists = false;
+    get(child(`user-${db_userid}`)).then(res => {
+        if(res.exists()){
+            user_exists = true;
+        }
+    });
+
+    if(user_exists)
+        return null;
+    else
+        set(`user-${db_userid}`, user);
     
     return user
 }
