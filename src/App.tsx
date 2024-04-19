@@ -5,6 +5,7 @@ import ProfilePage from "./pages/profile";
 
 import createUser from "./factory/createUser";
 import './global-styles.scss';
+import Home from "./pages/home";
 
 export default function App() {
   
@@ -13,6 +14,21 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route
+          path="/"
+          Component={Home}
+          />
+
+        <Route
+          path="/login"
+          Component={Home}
+          />
+
+        <Route
+          path="/register"
+          Component={Home}
+          />
+        
         <Route 
           path="/tasks"
           Component={
@@ -29,7 +45,7 @@ export default function App() {
         />
 
         <Route 
-          path="/"
+          path="/profile"
           Component={ProfilePage}
           />
 

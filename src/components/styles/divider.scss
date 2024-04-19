@@ -1,0 +1,8 @@
+.divider {
+    &::before {
+        background: #F8F4FF;
+        
+        height: 2px;
+        width: 100%;
+    }
+}

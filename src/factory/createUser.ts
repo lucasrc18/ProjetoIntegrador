@@ -27,7 +27,7 @@ type Goals = {
     completed: boolean
 }
 
-export interface User {
+export type User = {
     data: {
         username: string | undefined,
         name: string,
