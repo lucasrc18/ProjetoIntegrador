@@ -1,3 +1,5 @@
+import { FaGithub as GithubIcon, FaGoogle as GoogleIcon } from 'react-icons/fa6'
+
 import { ReactNode } from "react"
 import Divider from "../../../components/Divider"
 
@@ -33,6 +35,18 @@ export default function AuthSection({content}: AuthSectionProps) {
             <button onClick={buttonAction}>{buttonText}</button>
             
             <Divider>ou</Divider>
+
+            <button className="login-with">
+                <GoogleIcon />
+                
+                <p>Logar usando sua conta Gmail</p>
+            </button>
+            
+            <button className="login-with">
+                <GithubIcon />
+
+                <p>Logar usando sua conta GitHub</p>
+            </button>
         </div>
     )
 }
