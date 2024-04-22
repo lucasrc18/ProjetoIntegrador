@@ -3,7 +3,8 @@ import { AuthInstance } from './firebase';
 
 type UserAuthType = {
     email: string,
-    password: string
+    password: string,
+    username: string
 }
 
 export default {
@@ -30,8 +31,14 @@ export default {
      *  @params null
      *  @returns Promise<UserCredential>
      */
-    signInWithEmailAndPassword: async ({email, password}: UserAuthType) => {
-        await signInWithEmailAndPassword(AuthInstance, email, password);
+    signInWithEmailAndPassword: async ({email, password, username}: UserAuthType) => {
+        await signInWithEmailAndPassword(AuthInstance, email, password).then(
+            (result) => {
+                const user = result.user;
+
+                
+            }
+        );
     },
     /**
      *  Faz o logout do usuario
