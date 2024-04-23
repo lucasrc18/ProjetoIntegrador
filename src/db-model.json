@@ -1,6 +1,7 @@
 {
     "user-example-uid": {
         "data": {
+            "uid": "user-example-uid",
             "name": "name-example",
             "email": "user-email@example.com",
             "password": "user-password",

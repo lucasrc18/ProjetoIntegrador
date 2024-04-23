@@ -4,8 +4,11 @@ import Header from "./components/Header";
 import ProfilePage from "./pages/profile";
 
 import createUser from "./factory/createUser";
-import './global-styles.scss';
+import ErrorPage from "./pages/error";
 import Home from "./pages/home";
+import HomeHandler from "./pages/HomeHandler";
+
+import './global-styles.scss';
 
 export default function App() {
   
@@ -16,7 +19,12 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          Component={Home}
+          Component={HomeHandler}
+          />
+
+        <Route
+          path="/error"
+          Component={ErrorPage}
           />
 
         <Route

@@ -1,0 +1,21 @@
+#error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    padding: 2vh 1vw;
+
+    background: #f2f3f9;
+
+    div {
+        padding: 2vh 0;
+        background: #ccc;
+
+        * {
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+    }
+}
