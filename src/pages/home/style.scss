@@ -29,6 +29,11 @@
             font-size: 1.21rem;
             color: #f2f2ff;
             text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         background: #3B194D;
