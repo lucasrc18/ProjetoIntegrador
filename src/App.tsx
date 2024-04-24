@@ -8,85 +8,88 @@ import ErrorPage from "./pages/error";
 import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
 
+import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
 
 export default function App() {
-  
+
   createUser("Lucas", "lucas@gmail.com", "lucas123", "Lucas20");
-  
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          Component={HomeHandler}
+    <AuthContext>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            Component={HomeHandler}
           />
 
-        <Route
-          path="/error/:ErrorCode"
-          Component={ErrorPage}
+          <Route
+            path="/error/:ErrorCode"
+            Component={ErrorPage}
           />
 
-        <Route
-          path="/login"
-          Component={Home}
+          <Route
+            path="/login"
+            Component={Home}
           />
 
-        <Route
-          path="/register"
-          Component={Home}
+          <Route
+            path="/register"
+            Component={Home}
           />
-        
-        <Route 
-          path="/tasks"
-          Component={
-            function(){
-              return (
-                <div id="page">
-                  <Header />
 
-                  <h1>Tarefas</h1>
-                </div>
-              )
+          <Route
+            path="/tasks"
+            Component={
+              function () {
+                return (
+                  <div id="page">
+                    <Header />
+
+                    <h1>Tarefas</h1>
+                  </div>
+                )
+              }
             }
-          }
-        />
-
-        <Route 
-          path="/profile"
-          Component={ProfilePage}
           />
 
-        <Route 
-          path="/store"
-          Component={
-            function(){
-              return (
-                <div id="page">
-                  <Header />
+          <Route
+            path="/profile"
+            Component={ProfilePage}
+          />
 
-                  <h1>Loja</h1>
-                </div>
-              )
+          <Route
+            path="/store"
+            Component={
+              function () {
+                return (
+                  <div id="page">
+                    <Header />
+
+                    <h1>Loja</h1>
+                  </div>
+                )
+              }
             }
-          }
-        />
+          />
 
-        <Route
-          path="/social"
-          Component={
-            function(){
-              return (
-                <div id="page">
-                  <Header />
+          <Route
+            path="/social"
+            Component={
+              function () {
+                return (
+                  <div id="page">
+                    <Header />
 
-                  <h1>Amigos</h1>
-                </div>
-              )
+                    <h1>Amigos</h1>
+                  </div>
+                )
+              }
             }
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthContext>
   );
 }
