@@ -23,7 +23,7 @@ export default function App() {
           />
 
         <Route
-          path="/error"
+          path="/error/:ErrorCode"
           Component={ErrorPage}
           />
 

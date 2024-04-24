@@ -1,20 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
+import useErrorCode from "../../hooks/useErrorCode";
 import './style.scss';
 
-export default function ErrorPage(){
-    
-    
+export default function ErrorPage(){ 
+    const { ErrorCode } = useParams();
+
+    const error = useErrorCode(Number(ErrorCode));
+
     return (
         <div id="error-page">
             <div>
-                <h1>Desculpem-nos, algo de errado não está certo :(</h1>
+                <h1>{error.title}</h1>
                 <hr />
                 <div id="error-data">
-                    <h2>Código do erro: <i id="error-code">0000</i></h2>
+                    <h2>Código do erro: <i id="error-code">{ErrorCode}</i></h2>
+                    <h3>Descrição do erro: </h3>
                     <div id="description">
-                        <span>Descrição do erro: </span>
-                        <span>{"Ocorreu um erro"}</span>
+                        {error.message}
                     </div>
                 </div>
                 <h4>Para voltar para a tela inicial, <Link to="/">clique aqui</Link>.</h4>

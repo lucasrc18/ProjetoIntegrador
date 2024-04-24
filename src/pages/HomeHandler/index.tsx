@@ -19,7 +19,7 @@ export default function HomeHandler() {
                 loading={true}
                 speedMultiplier={1.1}
                 size={200}
-                onClick={() => navigate('/error', { state: new Error("Usuário não autenticado") })}
+                onClick={() => navigate('/error/404')}
             />
         </div>
     )

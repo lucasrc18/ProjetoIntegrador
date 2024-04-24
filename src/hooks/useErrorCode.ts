@@ -14,7 +14,7 @@ export default function useErrorCode(code: number){
         500: {
             code: 500,
             title: "Erro interno",
-            message: "Desculpe, ocorreu um erro interno no servidor. Por favor, entre em contato com o administrador do sistema."
+            message: "Desculpe-nos, algo de errado não está certo. :("
         }
     }
 
