@@ -38,13 +38,11 @@ export default function AuthSection({content}: AuthSectionProps) {
 
             <button className="login-with">
                 <GoogleIcon />
-                
                 <p>Logar usando sua conta Gmail</p>
             </button>
             
             <button className="login-with">
                 <GithubIcon />
-
                 <p>Logar usando sua conta GitHub</p>
             </button>
         </div>

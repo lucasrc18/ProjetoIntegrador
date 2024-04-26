@@ -102,7 +102,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 1.2vh;
+                gap: 1vh;
             
                 input {
                     width: 100%; /* Ocupa toda a largura do formulário */
@@ -111,7 +111,7 @@
                     border: none;
                     border-radius: 7px;
                     font-size: 1rem;
-                    padding: 22px 12px;
+                    padding: 17px 12px;
                     color: #3B194D;
                 }
             
@@ -122,10 +122,13 @@
             }
 
             button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 outline: none;
                 border: 2px solid #f2f2ff;
                 border-radius: 9px;
-                
+                gap: 0.5vw;
                 padding: 1vh 2vw;
 
                 font-size: 1.25rem;
