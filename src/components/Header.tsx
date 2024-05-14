@@ -17,7 +17,7 @@ export default function Header(){
                     Tarefas
                 </RouteLinkedButton>
 
-                <RouteLinkedButton id="profile-page" title="Ver seu perfil pessoal">
+                <RouteLinkedButton route="/profile" id="profile-page" title="Ver seu perfil pessoal">
                     Perfil
                 </RouteLinkedButton>
 
