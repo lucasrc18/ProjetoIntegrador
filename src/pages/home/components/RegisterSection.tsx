@@ -14,6 +14,7 @@ export default function RegisterSection(){
 
             <label htmlFor="confirmPassword" className="sr-only">Confirme sua senha:</label>
             <input type="password" name="confirmPassword" placeholder="Confirme sua senha: " />
+            
         </form>
     );
 
