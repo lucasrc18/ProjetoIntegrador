@@ -8,6 +8,7 @@ import ErrorPage from "./pages/error";
 import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
 import Tasks from "./pages/tasks";
+import Friends from "./pages/friends";
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -66,18 +67,8 @@ export default function App() {
           />
 
           <Route
-            path="/social"
-            Component={
-              function () {
-                return (
-                  <div id="page">
-                    <Header />
-
-                    <h1>Amigos</h1>
-                  </div>
-                )
-              }
-            }
+            path="/friends"
+            Component={Friends}
           />
         </Routes>
       </BrowserRouter>
