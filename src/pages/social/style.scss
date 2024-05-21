@@ -1,0 +1,28 @@
+#social-page{
+    height: 100vh;  
+    color: #f2f2ff;
+    background: #1D1620;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 5rem;
+
+    #searchContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 40%;
+
+        #searchBar{
+            width: 100%;
+            background-color: #f2f2ff;
+        }
+    }
+
+    #socialList{
+        width: 40%;
+    }
+}
