@@ -7,6 +7,11 @@ import createUser from "./factory/createUser";
 import ErrorPage from "./pages/error";
 import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
+<<<<<<< Updated upstream
+=======
+import Tasks from "./pages/tasks";
+import Social from "./pages/social";
+>>>>>>> Stashed changes
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -76,6 +81,7 @@ export default function App() {
 
           <Route
             path="/social"
+<<<<<<< Updated upstream
             Component={
               function () {
                 return (
@@ -87,6 +93,9 @@ export default function App() {
                 )
               }
             }
+=======
+            Component={Social}
+>>>>>>> Stashed changes
           />
         </Routes>
       </BrowserRouter>
