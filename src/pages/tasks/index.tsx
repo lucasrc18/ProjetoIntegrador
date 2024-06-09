@@ -25,7 +25,7 @@ export default function Tasks() {
                 <section id="rightSec">
                     <h1>Tarefas</h1>
                     <button>+</button>
-            </section>
+                </section>
             </main>
 		</div>
 	);
