@@ -9,9 +9,12 @@
     justify-content: center;
     align-items: center;
     
+    background: rgba(0,0,0,0.5);
+
     .modal {
         background: #3B194D;
         color: #f2f2ff;
+        padding: 1vh 2vw;
         
         header {
             background: #f2f2ff;
@@ -21,5 +24,8 @@
 
         border: 2px solid #f2f2ff;
         border-radius: 12px;
+
+        min-width: 25vw;
+        min-height: 50vh;
     }
 }
