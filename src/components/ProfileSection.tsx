@@ -24,11 +24,20 @@ export default function ProfileSection(props: ProfileSectionProps){
 
 	const user = {
 		username: username,
-		hp: 1,
+		//hp: 1,
 		xp: 0.5,
 		level: 20,
 		money: 2159,
 	};
+	/*<div id="hp-sec">
+						<strong>HP: </strong>
+						<ProgressBar 
+							title="HP" 
+							bg="#F66363" 
+							progress={100}
+							/> 
+					</div>
+	*/
     
     return (
         <div id="profile-section" style={{maxWidth: halfSize ? "50%" : ""}} {...divAttr}>
@@ -38,19 +47,11 @@ export default function ProfileSection(props: ProfileSectionProps){
 				<div>
 					<input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
 					<hr />
-					<div id="hp-sec">
-						<strong>HP: </strong>
-						<ProgressBar 
-							title="HP" 
-							bg="#F66363" 
-							progress={100}
-							/> 
-					</div>
 					<div id="xp-sec">
 						<strong>XP: </strong>
 						<ProgressBar 
 							title="XP"
-							bg="#FFFA8D"
+							bg="#DAA520"
 							progress={63}
 							/>
 					</div>

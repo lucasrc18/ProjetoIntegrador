@@ -37,7 +37,7 @@ export default function Social() {
 			<Header />
             <main>
               <section id="searchContainer">
-                <div id="serachBar">
+                <div id="searchBar">
                     <SearchIcon id="searchIcon"/> 
                     <input /> 
                 </div>
