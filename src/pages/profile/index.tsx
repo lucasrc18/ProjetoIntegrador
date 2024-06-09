@@ -9,6 +9,17 @@ export default function Profile() {
 			<Header />
 
 			<ProfileSection />
+
+			<main id="inventory">
+				<h1>Inventário</h1>
+				<nav id="invNav">
+					<ul>
+						<li><a href="#" id="select">Avatar</a></li>
+						<li><a href="#">Moldura</a></li>
+						<li><a href="#">Tema</a></li>
+					</ul>
+				</nav>
+			</main>
 		</div>
 	);
 }
