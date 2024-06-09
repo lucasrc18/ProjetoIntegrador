@@ -20,9 +20,10 @@ type User = {
         coins: 0
     },
     
+    friends: string[]
     inventory: string[],
-    tasks: string[],
-    goals: string[]
+    tasks: Task[],
+    goals: Goal[]
 }
 
 type ContextProps = {
@@ -53,32 +54,34 @@ export default function AuthContext(props: AuthContextProps){
                     if(snapshot.child(uid).exists()){
                         const data = snapshot.child(uid).val();
                         setUser({
-                            uid: data.uid,
-                            email: data.email,
-                            name: data.name,
-                            avatar: data.avatar,
+                            uid: data.uid!,
+                            email: data.email!,
+                            name: data.name || "Jacaré Banguela",
+                            avatar: data.avatar || undefined,
 
                             stats: {
-                                coins: data.stats.coins,
-                                xp: data.stats.xp,
-                                level: data.stats.level
+                                coins: data.stats.coins || 0,
+                                xp: data.stats.xp || 0,
+                                level: data.stats.level || 1
                             },
-                            inventory: data.inventory,
-                            tasks: data.tasks,
-                            goals: data.goals
+                            friends: data.friends || [],
+                            inventory: data.inventory || [],
+                            tasks: data.tasks || [],
+                            goals: data.goals || []
                         })
                     } else {
                         setUser({
-                            uid: user.uid,
+                            uid: user.uid!,
                             email: user.email!,
                             name: user.displayName || "Jacaré Banguela",
-                            avatar: undefined, // 
+                            avatar: undefined, 
 
                             stats: {
                                 coins: 0,
                                 xp: 0,
                                 level: 1
                             },
+                            friends: [],
                             inventory: [],
                             tasks: [], 
                             goals: [] // metas de boas vindas
@@ -87,6 +90,9 @@ export default function AuthContext(props: AuthContextProps){
 
                     setLoadingUser(false);
                 })
+            } else {
+                setLoadingUser(false);
+                window.location.href = "/login"
             }
         })
 
