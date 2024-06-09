@@ -51,7 +51,7 @@ export default function ProfileSection(props: ProfileSectionProps){
 						<strong>XP: </strong>
 						<ProgressBar 
 							title="XP"
-							bg="#FFFA8D"
+							bg="#DAA520"
 							progress={63}
 							/>
 					</div>
