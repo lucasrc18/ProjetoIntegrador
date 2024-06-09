@@ -5,7 +5,7 @@ import "./style.scss";
 
 export default function Profile() {
 	return (
-		<div id="page">
+		<div id="profile-page">
 			<Header />
 
 			<ProfileSection />

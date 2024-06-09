@@ -9,6 +9,7 @@ import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
 import Profile from "./pages/profile";
 import Store from "./pages/store";
+import Tasks from "./pages/tasks";
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -43,17 +44,7 @@ export default function App() {
 
           <Route
             path="/tasks"
-            Component={
-              function () {
-                return (
-                  <div id="page">
-                    <Header />
-
-                    <h1>Tarefas</h1>
-                  </div>
-                )
-              }
-            }
+            Component={Tasks}
           />
 
           <Route
