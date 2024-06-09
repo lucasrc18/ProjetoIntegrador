@@ -1,0 +1,25 @@
+.modal-overlay {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+    
+    .modal {
+        background: #3B194D;
+        color: #f2f2ff;
+        
+        header {
+            background: #f2f2ff;
+            color: #3B194D;
+            font-size: 1.1rem;
+        }
+
+        border: 2px solid #f2f2ff;
+        border-radius: 12px;
+    }
+}
