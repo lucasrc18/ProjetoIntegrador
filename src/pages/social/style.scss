@@ -73,4 +73,26 @@ main {
 
 #socialList {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2D0F40;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
 }
+
+#title {
+    color: white;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding: 0.5rem 0; /* Adiciona espaço acima e abaixo do texto */
+    margin-bottom: 1rem; /* Move o título para cima */
+ /* Adiciona uma borda branca de 1px */
+    text-shadow: none; /* Remove qualquer sombra de texto */
+}
+
+
+
+
+

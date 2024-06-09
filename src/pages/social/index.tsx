@@ -45,8 +45,11 @@ export default function Social() {
                   Nada encontrado!
                 </div>
               </section>
+
+             
+              
               <section id="socialList">
-                <h1>Amigos</h1>
+                <h1 id="title">Amigos</h1>
                 {amigos.map((amigo, index) => (
                     <div key={index}>
                       <h2>{amigo.name}</h2>
