@@ -3,7 +3,7 @@ import { Dispatch, ReactNode, SetStateAction } from 'react'
 import './modal.scss'
 
 export type ModalProps = {
-    children: ReactNode | JSX.Element,
+    children: ReactNode,
     active: boolean,
     setActive: Dispatch<SetStateAction<boolean>>,
     title?: string

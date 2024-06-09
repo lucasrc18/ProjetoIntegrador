@@ -17,7 +17,7 @@ export default function ErrorPage(){
                     {error.message}
                 </div>
                 <span>
-                    <h4>Para voltar para a tela inicial, <Link to="/">clique aqui</Link>.</h4>
+                    <h4>Para voltar para a tela inicial, <Link to="/"> clique aqui </Link>.</h4>
                     <sub>Código do erro: {ErrorCode}</sub>
                 </span>
             </div>
