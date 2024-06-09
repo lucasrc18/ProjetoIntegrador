@@ -23,14 +23,14 @@ export default function Modal(props: ModalProps){
             style={{ display: active ? 'flex' : 'none', backgroundColor: bgColor }}
             className="modal-overlay">
                 <div className="modal"
-                style={{width: width, height: height}}>
-                    {title ? (
-                        <header>
-                            <h1>{title}</h1>
-                        </header>
-                    ) : null}
+                    style={{width: width, height: height}}>
+                        {title ? (
+                            <header>
+                                <h1>{title}</h1>
+                            </header>
+                        ) : null}
 
-                    {children}
+                        {children}
                 </div>
         </div>
     )
