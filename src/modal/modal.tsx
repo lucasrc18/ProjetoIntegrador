@@ -3,7 +3,7 @@ import { Dispatch, ReactNode, SetStateAction } from 'react'
 import './modal.scss'
 
 export type ModalProps = {
-    children: ReactNode,
+    children: ReactNode | JSX.Element,
     active: boolean,
     setActive: Dispatch<SetStateAction<boolean>>,
     title?: string
@@ -15,8 +15,7 @@ export type ModalProps = {
 }
 
 export default function Modal(props: ModalProps){
-    const { children, active, title, setActive } = props
-    
+    const { children, active, title, setActive } = props;
     const { bgColor, width, height } = props
 
     return (
@@ -35,7 +34,9 @@ export default function Modal(props: ModalProps){
                             </header>
                         ) : null}
 
-                        {children}
+                        <div className="modal-content">
+                            {children}
+                        </div>
                 </div>
         </div>
     )

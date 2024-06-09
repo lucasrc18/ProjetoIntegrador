@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import BounceLoader from 'react-spinners/BounceLoader';
+import useAuth from '../../hooks/useAuth';
+import Modal from '../../modal/modal';
+import { useState } from 'react';
 
 const centeredLoader = {
     display: 'flex',
@@ -10,8 +13,11 @@ const centeredLoader = {
 }
 
 export default function HomeHandler() {
-    const navigate = useNavigate();
+    const [modalActive, setModalActive] = useState<boolean>(true);
 
+    const {  } = useAuth();
+    const navigate = useNavigate();
+    
     return (
         <div style={centeredLoader}>
             <BounceLoader
@@ -21,6 +27,14 @@ export default function HomeHandler() {
                 size={200}
                 onClick={() => navigate('/error/404')}
             />
+
+            <Modal
+                title="Adicionar tarefa"
+                active={modalActive}
+                setActive={setModalActive}>
+                <sub>LALALALLALA</sub>
+                <sub>LALALALAL2</sub>
+            </Modal>
         </div>
     )
 }

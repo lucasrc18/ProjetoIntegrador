@@ -7,15 +7,27 @@
 
     padding: 2vh 1vw;
 
-    background: #f2f3f9;
+    background: #2D0F40;
+    color: #f2f2ff;
+    text-align: center;
 
     div {
         padding: 2vh 0;
-        background: #ccc;
 
         * {
             margin-top: 1vh;
             margin-bottom: 1vh;
+        }
+
+        span {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h4 * {
+                border: none;
+                outline: none;
+            }
         }
     }
 }

@@ -4,17 +4,26 @@ type AuthContextProps = {
     children: ReactNode,
 }
 
-type ContextProps = {
-
+type User = { 
+    uid: string, 
+    email: string, 
+    name: string,
+    
 }
 
-const authContext = createContext({} as ContextProps);
+type ContextProps = {
+    user: User,
+    loading: boolean
+}
+
+
+export const authContext = createContext({} as ContextProps);
 
 export default function AuthContext(props: AuthContextProps){
     const { children } = props;
     
     return (
-        <authContext.Provider value={{}}>
+        <authContext.Provider value={{} as ContextProps}>
             {children}
         </authContext.Provider>
     )

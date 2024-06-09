@@ -16,7 +16,10 @@ export default function ErrorPage(){
                 <div id="error-data">
                     {error.message}
                 </div>
-                <h4>Para voltar para a tela inicial, <Link to="/">clique aqui</Link>.</h4>
+                <span>
+                    <h4>Para voltar para a tela inicial, <Link to="/">clique aqui</Link>.</h4>
+                    <sub>Código do erro: {ErrorCode}</sub>
+                </span>
             </div>
         </div>
     );
