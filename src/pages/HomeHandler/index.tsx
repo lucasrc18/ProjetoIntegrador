@@ -13,8 +13,6 @@ const centeredLoader = {
 }
 
 export default function HomeHandler() {
-    const [modalActive, setModalActive] = useState<boolean>(true);
-
     const {  } = useAuth();
     const navigate = useNavigate();
     
@@ -27,14 +25,6 @@ export default function HomeHandler() {
                 size={200}
                 onClick={() => navigate('/error/404')}
             />
-
-            <Modal
-                title="Adicionar tarefa"
-                active={modalActive}
-                setActive={setModalActive}>
-                <sub>LALALALLALA</sub>
-                <sub>LALALALAL2</sub>
-            </Modal>
         </div>
     )
 }
