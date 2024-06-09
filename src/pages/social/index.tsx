@@ -1,12 +1,13 @@
 import { FaMagnifyingGlass as SearchIcon, FaTrash as DeleteIcon } from "react-icons/fa6";
+import {useState} from "react";
 
 import Header from "../../components/Header";
 
 import "./style.scss";
-import Modal from "../../modal/modal";
 
 export default function Social() {
-  const amigos = [
+
+  const [amigos, setAmigos] = useState([
     {
       name: "Lucas",
       lv: 5
@@ -23,10 +24,12 @@ export default function Social() {
       name: "kauã",
       lv: 201
     }
-  ]
+  ]);
 
-  function buttonDel(){
-    
+  function buttonDel(index: number){
+    const updateAmigos = [...amigos];
+    updateAmigos.splice(index, 1);
+    setAmigos(updateAmigos);
   }
 
 	return (
@@ -35,7 +38,7 @@ export default function Social() {
             <main>
               <section id="searchContainer">
                 <div id="serachBar">
-                    <SearchIcon /> 
+                    <SearchIcon id="searchIcon"/> 
                     <input /> 
                 </div>
                 <div id="resultBox">
@@ -44,15 +47,14 @@ export default function Social() {
               </section>
               <section id="socialList">
                 <h1>Amigos</h1>
-                {amigos.map((amigo, index) => {
-                  return (
-                    <div>
+                {amigos.map((amigo, index) => (
+                    <div key={index}>
                       <h2>{amigo.name}</h2>
                       <p>Lv.{amigo.lv}</p>
-                      <button onClick={buttonDel}><DeleteIcon /></button>
+                      <button onClick={() => buttonDel(index)}><DeleteIcon /></button>
                     </div>
-                  )
-                })}
+                  
+                ))}
               </section>
             </main>
 		</div>
