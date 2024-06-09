@@ -17,8 +17,10 @@ export default function Tasks() {
             <main>
                 <section id="leftSec">
                     <ProfileSection />
-                    <h1>Metas</h1>
-                    <button>+</button>
+                    <div id="objective">
+                        <h1>Metas</h1>
+                        <button>+</button>
+                    </div>
                 </section>
                 <section id="rightSec">
                     <h1>Tarefas</h1>
