@@ -19,6 +19,7 @@ type User = {
         xp: 0,
         coins: 0
     },
+    
     inventory: string[],
     tasks: string[],
     goals: string[]
@@ -26,9 +27,8 @@ type User = {
 
 type ContextProps = {
     user: User,
-    loading: boolean
+    loadingUser: boolean
 }
-
 
 export const authContext = createContext({} as ContextProps);
 
@@ -94,7 +94,10 @@ export default function AuthContext(props: AuthContextProps){
     }, [])
 
     return (
-        <authContext.Provider value={{} as ContextProps}>
+        <authContext.Provider value={{
+            loadingUser,
+            user
+        } as ContextProps}>
             {children}
         </authContext.Provider>
     )

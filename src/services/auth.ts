@@ -91,5 +91,7 @@ export default {
         ).catch(
             err => navigate('/error', { state: err })
         );
-    }
+    },
+    
+    getAuth: () => AuthInstance
 }
