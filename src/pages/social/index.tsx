@@ -46,8 +46,6 @@ export default function Social() {
                 </div>
               </section>
 
-             
-              
               <section id="socialList">
                 <h1 id="title">Amigos</h1>
                 {amigos.map((amigo, index) => (

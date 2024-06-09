@@ -80,11 +80,15 @@ main {
     border: 3px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 #title {
-    color: white;
+    // color: white;
+    background: #f2f2ff;
+    color: #2D0F40;
+    width: 110%;
+    overflow-x: hidden;
     text-align: center; /* Centraliza o texto horizontalmente */
     padding: 0.5rem 0; /* Adiciona espaço acima e abaixo do texto */
     margin-bottom: 1rem; /* Move o título para cima */
