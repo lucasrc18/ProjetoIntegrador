@@ -1,25 +1,21 @@
 import Header from "../../components/Header";
-import ProfileSection from "../../components/ProfileSection";
 
 import "./style.scss";
 
-export default function Profile() {
+export default function Store() {
 	return (
 		<div id="page">
 			<Header />
-
-			<ProfileSection />
-
-			<main id="inventory">
-				<h1>Inventário</h1>
-				<nav>
+            <main>
+                <h1>Loja</h1>
+                <nav>
 					<ul>
 						<li><a href="#" id="select">Avatar</a></li>
 						<li><a href="#">Moldura</a></li>
 						<li><a href="#">Tema</a></li>
 					</ul>
 				</nav>
-			</main>
+            </main>
 		</div>
 	);
 }

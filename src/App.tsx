@@ -8,6 +8,7 @@ import ErrorPage from "./pages/error";
 import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
 import Profile from "./pages/profile";
+import Store from "./pages/store";
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -62,17 +63,7 @@ export default function App() {
 
           <Route
             path="/store"
-            Component={
-              function () {
-                return (
-                  <div id="page">
-                    <Header />
-
-                    <h1>Loja</h1>
-                  </div>
-                )
-              }
-            }
+            Component={Store}
           />
 
           <Route
