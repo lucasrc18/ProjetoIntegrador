@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Modal from '../modal'
-import { ModalProps } from "../modal"
+import { ModalPresetType } from "../modal"
 import './index.scss'
 import Highlight from '../../components/Highlight'
 
-export default function TaskModal({active, setActive}: ModalProps){
+export default function TaskModal({active, setActive}: ModalPresetType){
     const [desc, setDesc] = useState<string>('')
 
     return (

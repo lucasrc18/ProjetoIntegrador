@@ -14,6 +14,11 @@ export type ModalProps = {
     height?: string
 }
 
+export type ModalPresetType = {
+    active: boolean,
+    setActive: Dispatch<SetStateAction<boolean>>,
+}
+
 export default function Modal(props: ModalProps){
     const { children, active, title, setActive } = props;
     const { bgColor, width, height } = props
