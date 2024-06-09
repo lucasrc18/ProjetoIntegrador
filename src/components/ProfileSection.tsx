@@ -1,12 +1,18 @@
 import MoneyIcon from "./assets/MoneyIcon.png";
 import ProfileIcon from "./assets/TempProfileIcon.png";
 
-import { useEffect, useState } from "react";
+import { HTMLAttributes, useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
 
 import "./styles/profile-section.scss";
 
-export default function ProfileSection(){
+type ProfileSectionProps = HTMLAttributes<HTMLDivElement> & {
+	halfSize?: boolean;
+};
+
+export default function ProfileSection(props: ProfileSectionProps){
+	const {halfSize, ...divAttr} = props;
+
     const [username, setUsername] = useState<string>("Jacaré Banguela");
 
 	// Sempre que o valor de username for alterado,
@@ -25,7 +31,7 @@ export default function ProfileSection(){
 	};
     
     return (
-        <div id="profile-section">
+        <div id="profile-section" style={{maxWidth: halfSize ? "50%" : ""}} {...divAttr}>
 			<main id="profile-data">
 				<img id="profile-pic" src={ProfileIcon} alt="Foto de perfil do usuario" />
 
