@@ -3,9 +3,9 @@ import { FaMagnifyingGlass as SearchIcon, FaTrash as DeleteIcon } from "react-ic
 import Header from "../../components/Header";
 
 import "./style.scss";
+import Modal from "../../modal/modal";
 
 export default function Social() {
-
   const amigos = [
     {
       name: "Lucas",

@@ -1,10 +1,11 @@
-import { ReactNode } from 'react'
+import { Dispatch, ReactNode, SetStateAction } from 'react'
 
 import './modal.scss'
 
-type ModalProps = {
+export type ModalProps = {
     children: ReactNode,
     active: boolean,
+    setActive: Dispatch<SetStateAction<boolean>>,
     title?: string
     
     // Styles
@@ -14,12 +15,16 @@ type ModalProps = {
 }
 
 export default function Modal(props: ModalProps){
-    const { children, active, title } = props
+    const { children, active, title, setActive } = props
     
     const { bgColor, width, height } = props
 
     return (
         <div
+            onClick={async e => {
+                if(e.target == e.currentTarget)
+                    setActive(false)
+            }}
             style={{ display: active ? 'flex' : 'none', backgroundColor: bgColor }}
             className="modal-overlay">
                 <div className="modal"
