@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import BounceLoader from 'react-spinners/BounceLoader';
+import useAuth from '../../hooks/useAuth';
+import Modal from '../../modal/modal';
+import { useState } from 'react';
 
 const centeredLoader = {
     display: 'flex',
@@ -10,8 +13,9 @@ const centeredLoader = {
 }
 
 export default function HomeHandler() {
+    const {  } = useAuth();
     const navigate = useNavigate();
-
+    
     return (
         <div style={centeredLoader}>
             <BounceLoader
