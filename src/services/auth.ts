@@ -1,6 +1,4 @@
-import { GithubAuthProvider, GoogleAuthProvider, User, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import Database from './database';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { AuthInstance } from './firebase';
 
 export default {
