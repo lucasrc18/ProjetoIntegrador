@@ -32,8 +32,8 @@ async function registerUser(user: User, user_auth: UserAuthType | UserEmailType 
         stats: {
             level: 1,
             xp: 0,
-            hp: 50,
-            maxHp: 50,
+            //hp: 50,
+            //maxHp: 50,
             coins: 0
         },
         inventory: [],
