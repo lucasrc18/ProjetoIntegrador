@@ -7,6 +7,7 @@ import createUser from "./factory/createUser";
 import ErrorPage from "./pages/error";
 import Home from "./pages/home";
 import HomeHandler from "./pages/HomeHandler";
+import Profile from "./pages/profile";
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -56,7 +57,7 @@ export default function App() {
 
           <Route
             path="/profile"
-            Component={ProfilePage}
+            Component={Profile}
           />
 
           <Route
