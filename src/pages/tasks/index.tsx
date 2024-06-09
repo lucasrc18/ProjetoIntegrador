@@ -15,12 +15,12 @@ export default function Tasks() {
 		<div id="tasks-page">
 			<Header />
             <main>
-                <section>
-                    <ProfileSection halfSize={true} />
+                <section id="leftSec">
+                    <ProfileSection />
                     <h1>Metas</h1>
                     <button>+</button>
                 </section>
-                <section>
+                <section id="rightSec">
                     <h1>Tarefas</h1>
                     <button>+</button>
             </section>

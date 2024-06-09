@@ -10,6 +10,7 @@ import HomeHandler from "./pages/HomeHandler";
 import Profile from "./pages/profile";
 import Store from "./pages/store";
 import Tasks from "./pages/tasks";
+import Social from "./pages/social";
 
 import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
@@ -59,17 +60,7 @@ export default function App() {
 
           <Route
             path="/social"
-            Component={
-              function () {
-                return (
-                  <div id="page">
-                    <Header />
-
-                    <h1>Amigos</h1>
-                  </div>
-                )
-              }
-            }
+            Component={Social}
           />
         </Routes>
       </BrowserRouter>

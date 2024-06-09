@@ -9,11 +9,11 @@
         width: 94%;
         margin-left: 3%;
 
-        border: #FFF solid 2px;
+        border: #f2f2ff solid 2px;
         border-radius: 22px;
 
         background: #2D0F40;
-        color: #fff;
+        color: #f2f2ff;
 
         padding: 13px 13px;
         gap: 20px;
@@ -27,18 +27,18 @@
                 justify-content: center;
                 padding: 10px;
                 border-radius: 22px;
-                border: #FFF solid 2px;
+                border: #f2f2ff solid 2px;
                 li{
                     list-style: none;
 
                     #select{
-                        border-bottom: #FFF solid 2px;
+                        border-bottom: #f2f2ff solid 2px;
                         
                     }
                     a{
                         padding: 2px 5px;
                         text-decoration: none;
-                        color: #FFF;
+                        color: #f2f2ff;
                     }
                 }
             }
