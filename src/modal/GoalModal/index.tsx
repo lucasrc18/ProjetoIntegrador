@@ -1,16 +1,62 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal, { ModalPresetType } from '../modal'
 import MoneyIcon from '../../components/assets/MoneyIcon.png';
 
+import Database from '../../services/database';
+import useAuth from '../../hooks/useAuth';
+
 import './index.scss'	
+import { useNavigate } from 'react-router-dom';
 
 export default function GoalModal({active, setActive}: ModalPresetType) {
     const [desc, setDesc] = useState<string>('');
-    const [deadline, setDeadline] = useState<string>('');
+    const [deadline, setDeadline] = useState<string | undefined>(undefined);
     
     const [xp, setXP] = useState<Number | undefined>(undefined);
     const [coin, setCoins] = useState<Number | undefined>(undefined);
     
+    const { user, loadingUser } = useAuth();
+    const { child, ref, set, get, update, push, once } = Database;
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setDesc("");
+        setDeadline(undefined);
+        setXP(undefined);
+        setCoins(undefined);
+    }, [active])
+
+    async function addGoal() {
+        if(!xp || !coin || desc == "") {
+            alert("Preencha todos os campos");
+            return;
+        }
+        
+        if(loadingUser && !user.uid){
+            alert("Por favor, aguarde alguns instantes");
+            return;
+        } 
+
+        if(!user.uid && !loadingUser){
+            alert("Por favor faça um login primeiro");
+            navigate("/login");
+            return;
+        }
+
+        const newGoal = {
+            description: desc, 
+            deadline: deadline, 
+            xp: xp,
+            coin: coin
+        }
+
+        const newGoalRef = push(`users/${user.uid}/goals`);
+
+        await set(newGoalRef, newGoal);
+        setActive(false);
+    }
+
     return (
         <Modal title="Adicionar meta"
         id="goal-modal" active={active}
@@ -38,7 +84,7 @@ export default function GoalModal({active, setActive}: ModalPresetType) {
                 </div>
             </div>
 
-            <p id="goal-add">Adicionar</p>
+            <p id="goal-add" onClick={addGoal}>Adicionar</p>
 
         </Modal>
     );

@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9);
 
     .modal {
         background: #3B194D;
@@ -20,6 +20,7 @@
             color: #3B194D;
             font-size: 1.1rem;
             text-align: center;
+            border-radius: 10px;
         }
 
         border: 2px solid #f2f2ff;
