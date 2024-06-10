@@ -45,7 +45,8 @@ export default function Social() {
   }
 
   function buttonDel(index: number){
-    const updateAmigos = amigos.filter((_, i) => i !== index);
+    const updateAmigos = [...amigos];
+    updateAmigos.splice(index, 1);
     setAmigos(updateAmigos);
   }
 

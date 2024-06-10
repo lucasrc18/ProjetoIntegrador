@@ -1,9 +1,11 @@
 #profile-section {
     padding: 0 3vw;
-    margin-top: -2%;
+    width: 100%;
+    
 
     #profile-pic {
-        width: 170px; // Not responsive
+        margin: 1rem;
+        width: 170px; 
         height: 165px;
     }
 }
@@ -11,13 +13,18 @@
 #profile-data {
     border: 2px solid #fff;
     border-radius: 22px;
+   
+   
+    margin-top: 0;
 
     background: #2D0F40;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
     color: #fff;
 
-    padding: 13px 13px;
 
     gap: 20px;
 
