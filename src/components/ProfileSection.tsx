@@ -29,15 +29,6 @@ export default function ProfileSection(props: ProfileSectionProps){
 		level: 20,
 		money: 2159,
 	};
-	/*<div id="hp-sec">
-						<strong>HP: </strong>
-						<ProgressBar 
-							title="HP" 
-							bg="#F66363" 
-							progress={100}
-							/> 
-					</div>
-	*/
     
     return (
         <div id="profile-section" style={{maxWidth: halfSize ? "50%" : ""}} {...divAttr}>

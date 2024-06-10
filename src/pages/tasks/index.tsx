@@ -1,16 +1,9 @@
-import { useState } from "react";
 import Header from "../../components/Header";
 import ProfileSection from "../../components/ProfileSection";
-
-import "./style.scss";
 import TaskModal from "../../modal/TaskModal";
 
-export type Metas = {
-    id: number,
-    title: string,
-    amount: number,
-    XP: number
-}
+import { useState } from "react";
+import "./style.scss";
 
 export default function Tasks() {
     const [taskModal, handleTaskModal] = useState<boolean>(false);
@@ -21,11 +14,13 @@ export default function Tasks() {
             <main>
                 <section id="leftSec">
                     <ProfileSection />
+                    
                     <div id="objective">
                         <h1>Metas</h1>
                         <button>+</button>
                     </div>
                 </section>
+
                 <section id="rightSec">
                     <h1>Tarefas</h1>
                     <button onClick={() => handleTaskModal(true)}>+</button>

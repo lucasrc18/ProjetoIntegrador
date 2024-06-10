@@ -3,6 +3,7 @@ import { ReactNode, createContext, useEffect, useState } from "react";
 
 import Database from '../services/database';
 import Auth from '../services/auth';
+import { Task, Goal } from "../types/types";
 
 type AuthContextProps = {
     children: ReactNode,
@@ -91,8 +92,7 @@ export default function AuthContext(props: AuthContextProps){
                     setLoadingUser(false);
                 })
             } else {
-                setLoadingUser(false);
-                window.location.href = "/login"
+                setLoadingUser(false);  
             }
         })
 

@@ -1,0 +1,74 @@
+#task-modal .modal {
+    width: 40vw;
+}
+
+#task-desc {
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1vw;
+
+    input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #f2f2ff;
+        color: #f2f2ff;
+        padding: 0 10px;
+        outline: none;
+        font-size: 1rem;
+        padding: .4rem 1vw;
+        font-weight: bold;
+    }
+}
+
+#diff-label {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#task-diff {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 1vw;
+    width: 100%;
+    margin-top: 1vh;
+
+    .option {
+        border: 2px solid #f2f2ff;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0px 0px 12px #000000ae;
+        width: 10vw;
+
+        cursor: pointer;
+
+        * {
+            cursor: pointer;
+        }
+
+        .diff-label {
+            // border-radius: 12px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background: #f2f2ff;
+            color: #3B194D;
+            font-size: 1.1rem;
+            padding: 0 1.2vw;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 12px #000000d0;
+            transform: scale(1.02, 1.02);
+        }
+
+        p {
+            background: transparent;
+            color: #f2f2ff;
+            border: 2px solid #f2f2ff;
+            border-radius: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding: 1vh 1vw;
+        }
+    }
+}

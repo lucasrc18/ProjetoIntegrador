@@ -1,8 +1,8 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react'
+import { Dispatch, HTMLAttributes, ReactNode, SetStateAction } from 'react'
 
 import './modal.scss'
 
-export type ModalProps = {
+export type ModalProps = HTMLAttributes<HTMLDivElement> & {
     children: ReactNode,
     active: boolean,
     setActive: Dispatch<SetStateAction<boolean>>,
@@ -20,11 +20,11 @@ export type ModalPresetType = {
 }
 
 export default function Modal(props: ModalProps){
-    const { children, active, title, setActive } = props;
-    const { bgColor, width, height } = props
+    const {children, active, title, setActive, bgColor, width, height, ...others } = props;
 
     return (
         <div
+            {...others}
             onClick={async e => {
                 if(e.target == e.currentTarget)
                     setActive(false)
