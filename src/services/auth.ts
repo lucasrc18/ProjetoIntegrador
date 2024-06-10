@@ -44,5 +44,5 @@ export default {
         );
     },
     
-    getAuth: () => AuthInstance
+    getAuth: () => AuthInstance,
 }

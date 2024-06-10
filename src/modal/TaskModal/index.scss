@@ -107,10 +107,39 @@
     width: 50%;
     margin-left: 25%;
     margin-top: 1.5vh;
+    margin-bottom: 1vh;
 }
 
 #task-add:hover {
     background: #f2f2ff;
     color: #3B194D;
     transition-duration: .7s;
+}
+
+#routine-label {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#routine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 1vw;
+    width: 100%;
+    margin-top: 1.5vh;
+
+    .r-option {
+        cursor: pointer;
+        padding: 1.3vh 1vw;
+
+        border: 2px solid #f2f2ff;
+        border-radius: 12px;
+        background: #3B194D;
+        color: #f2f2ff;
+
+        &:hover {
+            background: #44145e;
+        }
+    }
 }
