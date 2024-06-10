@@ -86,32 +86,34 @@ export default function Tasks() {
 												<h3 className="goal-title">
 													{goal.description}
 												</h3>
-												<span> - </span>
 												<h3>
 													Deadline:{" "}
 													{goal.deadline.toLocaleString(
 														"pt-BR"
 													) || "Indefinido"}
 												</h3>
-												<h3>XP: {goal.xp}</h3>
-												<h3>Coin: {goal.coin}</h3>
-												
-												{goal.completed ? undefined :
-													<span 
-													className="check-btn" 
-													onClick={() => completeGoal(index)}>
-														✔
-													</span>
-												}
-
-												<button
-													className="remove-btn"
-													onClick={() =>
-														removeGoal(index)
+												<div>
+													<h3>XP: {goal.xp}</h3>
+													<h3>Coins: {goal.coin}</h3>
+												</div>
+												<div>
+													{goal.completed ? undefined :
+														<span 
+														className="check-btn" 
+														onClick={() => completeGoal(index)}>
+															✔
+														</span>
 													}
-												>
+
+													<button
+														className="remove-btn"
+														onClick={() =>
+															removeGoal(index)
+														}
+													>
 													-
-												</button>
+													</button>
+												</div>
 											</div>
 										);
 								})

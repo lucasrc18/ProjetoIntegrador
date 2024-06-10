@@ -110,6 +110,18 @@
 	}
 }
 
+.goal{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 350px;
+	gap: 10px;
+	
+	border: #f2f2ff 2px solid;
+	border-radius: 22px;
+	padding: 10px;
+}
+
 @media screen and (max-width: 1000px) {
 	#tasks-page {
 		height: 100%;

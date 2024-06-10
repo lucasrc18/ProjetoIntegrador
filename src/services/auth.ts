@@ -11,7 +11,7 @@ export default {
         const provider = new GoogleAuthProvider();
         
         await signInWithPopup(AuthInstance, provider).then(() => {
-            window.location.href = "/"
+            window.location.href = "/tasks"
         }
         ).catch(err => {
             window.location.href = "/error/500"
@@ -25,7 +25,7 @@ export default {
     signInWithGithub: async () => {
         const provider = new GithubAuthProvider();
         await signInWithPopup(AuthInstance, provider).then(() => {
-            window.location.href = "/"
+            window.location.href = "/tasks"
         }).catch(err => {
             window.location.href = "/error/500"
         });
