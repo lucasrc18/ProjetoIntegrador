@@ -23,7 +23,7 @@ main {
     display: flex;
     align-items: center;
     background-color: #2D0F40;
-    border: 3px solid #ccc;
+    border: 3px solid #f2f2ff;
     border-radius: 8px; 
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,24 +48,24 @@ main {
 }
 
 #searchBar input::placeholder {
-    color: #aaa;
+    color: #f2f2ff;
 }
 
 #searchIcon {
     width: 4%;
     height: 100%;
-    color: white; 
+    color: #f2f2ff; 
     fill: currentColor; 
 }
 
 #resultBox {
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: #f2f2ff;
     text-align: center;
     padding: 1rem;
     background-color: #2D0F40;
-    border: 3px solid #ddd;
+    border: 3px solid #f2f2ff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 110%;
@@ -78,7 +78,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: #2D0F40;
-    border: 3px solid #ddd;
+    border: 3px solid #f2f2ff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
