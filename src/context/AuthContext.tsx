@@ -1,30 +1,11 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { User, onAuthStateChanged } from "firebase/auth";
 import { ReactNode, createContext, useEffect, useState } from "react";
 
-import Database from '../services/database';
 import Auth from '../services/auth';
 import { Task, Goal } from "../types/types";
 
 type AuthContextProps = {
     children: ReactNode,
-}
-
-type User = { 
-    uid: string, 
-    email: string, 
-    name: string,
-    avatar: string | undefined,
-    
-    stats: {
-        level: 1,
-        xp: 0,
-        coins: 0
-    },
-    
-    friends: string[]
-    inventory: string[],
-    tasks: Task[],
-    goals: Goal[]
 }
 
 type ContextProps = {
@@ -36,68 +17,23 @@ export const authContext = createContext({} as ContextProps);
 
 export default function AuthContext(props: AuthContextProps){
     const [loadingUser, setLoadingUser] = useState<boolean>(true);
-    const [user, setUser] = useState<User>({} as User);
+    const [user, setUser] = useState({} as User);
 
     const { children } = props;
 
     const { getAuth } = Auth;
-    const { ref, once } = Database;
 
     useEffect(() => {
         setLoadingUser(true);
-        const unsubscribe = onAuthStateChanged(getAuth(), user => {
-            if(user){
-                const uid = user.uid
-
-                const users = ref('users')
-                // Verificar se existe o usuario no banco de dados
-                once(users, snapshot => {
-                    if(snapshot.child(uid).exists()){
-                        const data = snapshot.child(uid).val();
-                        setUser({
-                            uid: data.uid!,
-                            email: data.email!,
-                            name: data.name || "Jacaré Banguela",
-                            avatar: data.avatar || undefined,
-
-                            stats: {
-                                coins: snapshot.child(`${uid}/stats/coins`).val() || 0,
-                                xp: snapshot.child(`${uid}/stats/xp`).val() || 0,
-                                level: snapshot.child(`${uid}/stats/level`).val() || 1
-                            },
-                            friends: data.friends || [],
-                            inventory: data.inventory || [],
-                            tasks: data.tasks || [],
-                            goals: data.goals || []
-                        })
-                    } else {
-                        setUser({
-                            uid: user.uid!,
-                            email: user.email!,
-                            name: user.displayName || "Jacaré Banguela",
-                            avatar: undefined, 
-
-                            stats: {
-                                coins: 0,
-                                xp: 0,
-                                level: 1
-                            },
-                            friends: [],
-                            inventory: [],
-                            tasks: [], 
-                            goals: [{
-                                description: "Boas vindas ao TaskChampions!",
-                                date: new Date().toLocaleDateString("pt-BR"),
-                                xp: 10,
-                                coin: 10
-                            }] // metas de boas vindas
-                        })
-                    }
-
-                    setLoadingUser(false);
-                })
+        const unsubscribe = onAuthStateChanged(getAuth(), usr => {
+            if(usr){
+                setUser(usr)
+                localStorage.setItem("user", JSON.stringify(user))
+                localStorage.setItem("uid", user.uid)
             } else {
                 setLoadingUser(false);  
+                localStorage.setItem("user", "")
+                localStorage.setItem("uid", "")
             }
         })
 

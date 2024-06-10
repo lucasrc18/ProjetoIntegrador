@@ -55,6 +55,12 @@ export default function App() {
             path="/social"
             Component={Social}
           />
+
+          {/* Error 404 page not found */}
+          <Route
+            path="*"
+            Component={ErrorPage}
+          />
         </Routes>
       </BrowserRouter>
     </AuthContext>

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import BounceLoader from 'react-spinners/BounceLoader';
 import useAuth from '../../hooks/useAuth';
 import Modal from '../../modal/modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const centeredLoader = {
     display: 'flex',
@@ -13,9 +13,20 @@ const centeredLoader = {
 }
 
 export default function HomeHandler() {
-    const {  } = useAuth();
     const navigate = useNavigate();
     
+    useEffect(() => {
+        if(localStorage.uid != "") {
+            navigate('/login')
+        } else {
+            if(localStorage.getItem("user") != ""){
+                navigate("/profile")
+            } else {
+                navigate("/login")
+            }
+        }
+    }, [])
+
     return (
         <div style={centeredLoader}>
             <BounceLoader

@@ -14,7 +14,7 @@ export default function Header({buttonLink}: HomeHeaderProps) {
             <img src={Icon} alt="Icone do TaskChampions" />
 
             <Link to={buttonLink}>{
-                buttonLink === "/login" ? "Entrar" : "Registrar"
+                buttonLink.substring(1)
             }</Link>
         </header>
     )

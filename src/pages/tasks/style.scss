@@ -80,13 +80,33 @@
 }
 
 #taskList {
+	scrollbar-width: thin;
+	overflow-y: hidden;
+	overflow-x: hidden;
 	font-size: 1.3rem;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	h1 {
 		background: transparent;
+	}
+
+	.task {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1vw;
+		padding: 1vh 1vw;
+		border: 2px solid #f2f2ff;
+		border-radius: 12px;
+		margin-bottom: 1vh;
+	}
+
+	::-webkit-scrollbar {
+		margin-left: 1vw;
 	}
 }
 
@@ -108,4 +128,13 @@
 			}
 		}
 	}
+}
+
+.task-title {
+	text-transform: capitalize;
+}
+
+.remove-btn {
+	cursor: pointer;
+	scale: 0.6 0.6;
 }

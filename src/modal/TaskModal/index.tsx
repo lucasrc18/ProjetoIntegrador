@@ -7,7 +7,6 @@ import CoinIcon from "../../components/assets/MoneyIcon.png";
 
 import './index.scss'
 import useAuth from '../../hooks/useAuth';
-import Database from '../../services/database';
 import { useNavigate } from 'react-router-dom';
 
 export default function TaskModal({active, setActive}: ModalPresetType){
@@ -16,7 +15,6 @@ export default function TaskModal({active, setActive}: ModalPresetType){
     const [routine, setRoutine] = useState<undefined | 0 | 1 | 2>(undefined);
 
     const { user, loadingUser } = useAuth();
-    const { child, ref, set, get, update, push, once } = Database;
 
     const navigate = useNavigate();
 
@@ -34,32 +32,51 @@ export default function TaskModal({active, setActive}: ModalPresetType){
     }, [active])
 
     function addTask() {
-        if(desc == "") {
-            alert("Preencha todos os campos")
-            return
+        if (desc === "") {
+            alert("Preencha todos os campos");
+            return;
         }
         
-        if(loadingUser && !user.uid){
+        if (loadingUser && !user.uid) {
             alert("Por favor, aguarde alguns instantes");
             return;
         } 
-
-        if(!user.uid && !loadingUser){
+    
+        if (!user.uid && !loadingUser) {
             alert("Por favor faça um login primeiro");
             navigate("/login");
             return;
         }
-
+    
         const newTask = {
-            description: desc, 
+            description: desc,
             difficulty: diff,
-            routine: routine, 
+            routine: routine,
             lastTimeCompleted: new Date().toLocaleDateString("pt-BR")
+        };
+    
+        let existingTasks: any = localStorage.getItem("tasks");
+    
+        if (existingTasks) {
+            try {
+                existingTasks = JSON.parse(existingTasks);
+                if (Array.isArray(existingTasks)) {
+                    existingTasks.push(newTask);
+                } else {
+                    existingTasks = [newTask];
+                }
+            } catch (e) {
+                console.error("Erro ao parsear tasks do localStorage:", e);
+                existingTasks = [newTask];
+            }
+        } else {
+            existingTasks = [newTask];
         }
-
-        const newTaskRef = push(`tasks`);
-        set(newTaskRef, newTask);
+    
+        localStorage.setItem("tasks", JSON.stringify(existingTasks));
+        setActive(false);
     }
+    
 
     return (
         <Modal title="Adicionar a tarefa"

@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import Modal, { ModalPresetType } from '../modal'
 import MoneyIcon from '../../components/assets/MoneyIcon.png';
 
-import Database from '../../services/database';
 import useAuth from '../../hooks/useAuth';
 
 import './index.scss'	
 import { useNavigate } from 'react-router-dom';
+import { push, set } from 'firebase/database';
 
 export default function GoalModal({active, setActive}: ModalPresetType) {
     const [desc, setDesc] = useState<string>('');
@@ -16,7 +16,6 @@ export default function GoalModal({active, setActive}: ModalPresetType) {
     const [coin, setCoins] = useState<Number | undefined>(undefined);
     
     const { user, loadingUser } = useAuth();
-    const { child, ref, set, get, update, push, once } = Database;
 
     const navigate = useNavigate();
 
@@ -29,33 +28,49 @@ export default function GoalModal({active, setActive}: ModalPresetType) {
         }
     }, [active])
 
-    async function addGoal() {
-        if(!xp || !coin || desc == "") {
+    function addGoal() {
+        if (!xp || !coin || desc === "") {
             alert("Preencha todos os campos");
             return;
         }
         
-        if(loadingUser && !user.uid){
+        if (loadingUser && !user.uid) {
             alert("Por favor, aguarde alguns instantes");
             return;
         } 
-
-        if(!user.uid && !loadingUser){
+    
+        if (!user.uid && !loadingUser) {
             alert("Por favor faça um login primeiro");
             navigate("/login");
             return;
         }
-
+    
         const newGoal = {
             description: desc, 
             deadline: deadline, 
             xp: xp,
             coin: coin
+        };
+    
+        let existingGoals: any = localStorage.getItem("goals");
+    
+        if (existingGoals) {
+            try {
+                existingGoals = JSON.parse(existingGoals);
+                if (Array.isArray(existingGoals)) {
+                    existingGoals.push(newGoal);
+                } else {
+                    existingGoals = [newGoal];
+                }
+            } catch (e) {
+                console.error("Erro ao parsear goals do localStorage:", e);
+                existingGoals = [newGoal];
+            }
+        } else {
+            existingGoals = [newGoal];
         }
-
-        const newGoalRef = push(`goals`);
-
-        await set(newGoalRef, newGoal);
+    
+        localStorage.setItem("goals", JSON.stringify(existingGoals));
         setActive(false);
     }
 
