@@ -46,13 +46,15 @@ export default function Social() {
                 </div>
               </section>
 
-              <section id="socialList">
-                <h1 id="title">Amigos</h1>
-                <div id="linhainformacoes">
+              <section id="socialContainer">
+                <h1>Amigos</h1>
+                <div id="socialList">
                 {amigos.map((amigo, index) => (
-                    <div key={index}>
-                      <h2>{amigo.name}</h2>
-                      <p>Lv.{amigo.lv}</p>
+                    <div id="infoSocial" key={index}>
+                      <div id="info">
+                        <h2>{amigo.name}</h2>
+                        <p>Lv.{amigo.lv}</p>
+                      </div>
                       <button onClick={() => buttonDel(index)}><DeleteIcon /></button>
                     </div>
                 ))}

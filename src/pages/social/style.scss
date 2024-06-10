@@ -14,7 +14,7 @@ main {
 #searchContainer {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os elementos dentro do contêiner */
+    align-items: center;
     gap: 1rem;
     width: 40%;
 }
@@ -24,7 +24,7 @@ main {
     align-items: center;
     background-color: #2D0F40;
     border: 3px solid #ccc;
-    border-radius: 8px; /* Reduzindo o valor do border-radius para menos arredondado */
+    border-radius: 8px; 
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
@@ -44,7 +44,7 @@ main {
     font-size: 1rem;
     padding: 0.5rem;
     margin-left: 0.5rem;
-    color: #f2f2ff; /* Ajusta a cor do texto do input para ficar visível */
+    color: #f2f2ff; 
 }
 
 #searchBar input::placeholder {
@@ -59,7 +59,8 @@ main {
 }
 
 #resultBox {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -68,10 +69,10 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 110%;
-    height: 32rem; /* Ajusta a altura para criar um quadrado maior */
+    height: 32rem; 
 }
 
-#socialList {
+#socialContainer {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -80,60 +81,54 @@ main {
     border: 3px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 0 1rem;
+    
+
+    h1{
+        background-color: #f2f2ff;
+        color: #2D0F40;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+    }
+
+    #socialList{
+        width: 100%;
+        padding: 1.5em;
+
+        #infoSocial{
+            display: flex;
+            align-items: center;
+            border-bottom: #f2f2ff 2px solid;
+            padding: 0.7em 1em;
+
+            #info{
+                width: 90%;
+                display: flex;
+                align-items: center;
+                h2{
+                    width: 40%;
+                    
+                }
+    
+                p{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+
+            button{
+                color: #f2f2ff;
+                border: #f2f2ff 3px solid;
+                background-color: #2D0F40;
+                border-radius: 50%;
+                width: 3rem;
+                height: 3rem;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+     }
 }
 
-.friendItem {
-    display: flex; /* Alinha os elementos dos amigos na mesma linha */
-    justify-content: space-between; /* Espaço uniforme entre os elementos */
-    align-items: center; /* Centraliza verticalmente os elementos */
-    background-color: #f2f2ff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem; /* Espaço entre cada item de amigo */
-    width: 100%;
-}
 
 
-#title {
-    // color: white;
-    background: #f2f2ff;
-    color: #2D0F40;
-    width: 105.7%;
-    border-radius: 3%;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    padding: 0.5rem 0; /* Adiciona espaço acima e abaixo do texto */
-    margin-bottom: 1rem; /* Move o título para cima */
- /* Adiciona uma borda branca de 1px */
-    text-shadow: none; /* Remove qualquer sombra de texto */
-}
-
-#linhainformacoes > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2D0F40;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem; /* Espaçamento vertical entre os itens */
-    margin-left: 7.3rem ; /* Centraliza a div horizontalmente */
-    margin-right: 31rem ; /* Centraliza a div horizontalmente */
-    max-width: 60%; /* Define a largura máxima da div para evitar que ela ocupe toda a largura */
-    width: calc(100% - 1rem); /* Ajuste para a largura total considerando a margem direita */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    position: relative; /* Adiciona posição relativa para que as linhas sejam posicionadas corretamente */
-}
-
-#linhainformacoes > div::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 115%;
-    height: 2px;
-    background-color: white; /* Cor da linha */
-}
-
-#linhainformacoes > div:not(:last-child) {
-    margin-bottom: 1rem; /* Adiciona espaçamento entre cada item, exceto o último */
-}
