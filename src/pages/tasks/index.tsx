@@ -1,12 +1,15 @@
 import Header from "../../components/Header";
 import ProfileSection from "../../components/ProfileSection";
 import TaskModal from "../../modal/TaskModal";
+import GoalModal from "../../modal/GoalModal";
 
 import { useState } from "react";
 import "./style.scss";
 
 export default function Tasks() {
     const [taskModal, handleTaskModal] = useState<boolean>(false);
+
+    const [goalModal, handleGoalModal] = useState<boolean>(false);
 
 	return (
 		<div id="tasks-page">
@@ -17,7 +20,7 @@ export default function Tasks() {
                     
                     <div id="objective">
                         <h1>Metas</h1>
-                        <button>+</button>
+                        <button onClick={() => handleGoalModal(true)}>+</button>
                     </div>
                 </section>
 
@@ -28,6 +31,7 @@ export default function Tasks() {
             </main>
 
             <TaskModal active={taskModal} setActive={handleTaskModal} />
+            <GoalModal active={goalModal} setActive={handleGoalModal} />
 		</div>
 	);
 }

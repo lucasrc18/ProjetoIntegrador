@@ -16,9 +16,6 @@ import AuthContext from "./context/AuthContext";
 import './global-styles.scss';
 
 export default function App() {
-
-  createUser("Lucas", "lucas@gmail.com", "lucas123", "Lucas20");
-
   return (
     <AuthContext>
       <BrowserRouter>
