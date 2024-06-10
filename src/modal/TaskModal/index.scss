@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     padding: 2vh 1vw;
+    margin-top: 1.5vh;
 
     input {
         background: transparent;
@@ -23,6 +24,8 @@
 #diff-label {
     text-align: center;
     font-size: 1.5rem;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
 }
 
 #task-diff {
@@ -31,7 +34,7 @@
     justify-content: space-between;
     padding: 2vh 1vw;
     width: 100%;
-    margin-top: 1vh;
+    margin-top: 1.5vh;
 
     .option {
         border: 2px solid #f2f2ff;
@@ -39,6 +42,7 @@
         text-align: center;
         box-shadow: 0px 0px 12px #000000ae;
         width: 10vw;
+        font-weight: bold;
 
         cursor: pointer;
 
@@ -52,23 +56,61 @@
             border-top-right-radius: 8px;
             background: #f2f2ff;
             color: #3B194D;
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             padding: 0 1.2vw;
         }
 
         &:hover {
-            box-shadow: 0px 0px 12px #000000d0;
+            box-shadow: 0px 0px 12px #000000db;
             transform: scale(1.02, 1.02);
         }
 
-        p {
-            background: transparent;
-            color: #f2f2ff;
-            border: 2px solid #f2f2ff;
-            border-radius: 12px;
-            font-weight: bold;
-            text-align: center;
-            padding: 1vh 1vw;
+        .diff-desc {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+            padding: .6vh 0;
+            font-size: 1.2rem;
+            .coin {
+                img {
+                    height: 1.2rem;
+                }
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
         }
     }
+
+    .option:hover {
+        .diff-label {
+            background: #ededf2;
+            color: #3B194D;
+        }
+        .diff-desc {
+            background: #44145e;
+        }
+    }
+}
+
+#task-add {
+    background: transparent;
+    color: #f2f2ff;
+    border: 2px solid #f2f2ff;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1vh 1vw;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 1.5vh;
+}
+
+#task-add:hover {
+    background: #f2f2ff;
+    color: #3B194D;
+    transition-duration: .7s;
 }

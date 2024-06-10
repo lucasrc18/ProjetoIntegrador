@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { ModalPresetType } from "../modal"
 import Highlight from '../../components/Highlight'
 
+import CoinIcon from "../../components/assets/MoneyIcon.png";
+
 import './index.scss'
 
 export default function TaskModal({active, setActive}: ModalPresetType){
@@ -24,7 +26,7 @@ export default function TaskModal({active, setActive}: ModalPresetType){
                 <div className="option">
                     <div className="diff-label">Fácil</div>
                     <div className="diff-desc">
-                        10 coins <br />
+                        <div className="coin">10 <img src={CoinIcon} alt="Icone de moedas" /></div>
                         15 xp
                     </div>
                 </div>
@@ -32,7 +34,7 @@ export default function TaskModal({active, setActive}: ModalPresetType){
                 <div className="option">
                     <div className="diff-label">Médio</div>
                     <div className="diff-desc">
-                        20 coins <br />
+                        <div className="coin">20 <img src={CoinIcon} alt="Icone de moedas" /></div>
                         30 xp
                     </div>
                 </div>
@@ -40,7 +42,7 @@ export default function TaskModal({active, setActive}: ModalPresetType){
                 <div className="option">
                     <div className="diff-label">Difícil</div>
                     <div className="diff-desc">
-                        30 coins <br />
+                        <div className="coin">30 <img src={CoinIcon} alt="Icone de moedas" /></div>
                         45 xp
                     </div>
                 </div>

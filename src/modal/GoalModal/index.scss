@@ -1,0 +1,70 @@
+#goal-modal .modal {
+    width: 40vw;
+
+    input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #f2f2ff;
+        color: #f2f2ff;
+        padding: 0 10px;
+        outline: none;
+        font-size: 1rem;
+        padding: .4rem 1vw;
+        font-weight: bold;
+    }
+}
+
+.div-inp {
+    width: 100%;	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5vh 0;
+}
+
+#goal-rewards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;	
+    gap: 1vw;
+
+    #goal-xp div {
+        font-weight: bold;
+    }
+
+    #goal-xp, #goal-coin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        
+        input {
+            border: 3px solid #f2f2ff;
+            border-radius: 10px;
+        }
+    } 
+}
+
+
+#goal-add {
+    background: transparent;
+    color: #f2f2ff;
+    border: 2px solid #f2f2ff;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1vh 1vw;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5vh;
+}
+
+#goal-add:hover {
+    background: #f2f2ff;
+    color: #3B194D;
+    transition-duration: .7s;
+}
