@@ -7,7 +7,7 @@ export type Task = {
 
 export type Goal = {
     description: string,
-    date: Date, 
+    date: Date | string, 
     xp: number, 
     coin: number
 }

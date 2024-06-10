@@ -61,9 +61,9 @@ export default function AuthContext(props: AuthContextProps){
                             avatar: data.avatar || undefined,
 
                             stats: {
-                                coins: data.stats.coins || 0,
-                                xp: data.stats.xp || 0,
-                                level: data.stats.level || 1
+                                coins: snapshot.child(`${uid}/stats/coins`).val() || 0,
+                                xp: snapshot.child(`${uid}/stats/xp`).val() || 0,
+                                level: snapshot.child(`${uid}/stats/level`).val() || 1
                             },
                             friends: data.friends || [],
                             inventory: data.inventory || [],
@@ -85,7 +85,12 @@ export default function AuthContext(props: AuthContextProps){
                             friends: [],
                             inventory: [],
                             tasks: [], 
-                            goals: [] // metas de boas vindas
+                            goals: [{
+                                description: "Boas vindas ao TaskChampions!",
+                                date: new Date().toLocaleDateString("pt-BR"),
+                                xp: 10,
+                                coin: 10
+                            }] // metas de boas vindas
                         })
                     }
 
