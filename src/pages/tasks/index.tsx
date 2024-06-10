@@ -24,13 +24,38 @@ export default function Tasks() {
 		localStorage.setItem("tasks", JSON.stringify(updatedTasks));
 	}
 
-    function removeGoal(id: number) {
-        const updatedGoals = goalsList
-            .slice(0, id)
-            .concat(goalsList.slice(id + 1));
-        setGoals(updatedGoals);
-        localStorage.setItem("goals", JSON.stringify(updatedGoals));
-    }
+	function removeGoal(id: number) {
+		const updatedGoals = goalsList
+			.slice(0, id)
+			.concat(goalsList.slice(id + 1));
+		setGoals(updatedGoals);
+		localStorage.setItem("goals", JSON.stringify(updatedGoals));
+	}
+
+	function completeTask(id: number){
+		const updatedTasks = tasksList.map((task, index) => {
+			if (index === id) {
+				return { ...task, completed: true };
+			}
+			return task;
+		});
+	
+		setTasks(updatedTasks);
+		localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+	}
+	
+	function completeGoal(id: number){
+		const updatedGoals = goalsList.map((goal, index) => {
+			if (index === id) {
+				return { ...goal, completed: true };
+			}
+			return goal;
+		});
+	
+		setGoals(updatedGoals);
+
+		removeGoal(id);
+	}
 
 	useEffect(() => {
 		setTasks(JSON.parse(localStorage.getItem("tasks")!));
@@ -50,8 +75,8 @@ export default function Tasks() {
 					<div id="objective">
 						<h1>Metas</h1>
 						<div id="goalList">
-							{goalsList != null ? 
-                                goalsList.map((goal, index) => {
+							{goalsList != null
+								? goalsList.map((goal, index) => {
 										return (
 											<div
 												className="goal"
@@ -63,10 +88,21 @@ export default function Tasks() {
 												</h3>
 												<span> - </span>
 												<h3>
-													Deadline: {goal.deadline.toLocaleString("pt-BR") || "Indefinido"}
+													Deadline:{" "}
+													{goal.deadline.toLocaleString(
+														"pt-BR"
+													) || "Indefinido"}
 												</h3>
 												<h3>XP: {goal.xp}</h3>
 												<h3>Coin: {goal.coin}</h3>
+												
+												{goal.completed ? undefined :
+													<span 
+													className="check-btn" 
+													onClick={() => completeGoal(index)}>
+														✔
+													</span>
+												}
 
 												<button
 													className="remove-btn"
@@ -78,8 +114,8 @@ export default function Tasks() {
 												</button>
 											</div>
 										);
-								  })
-								: null}
+								})
+							: null}
 						</div>
 						<button onClick={() => handleGoalModal(true)}>+</button>
 					</div>
@@ -122,7 +158,7 @@ export default function Tasks() {
 									}
 
 									return (
-										<div
+										<div style={task.completed ? {border: "2px solid green"} : {}}
 											className="task"
 											key={index}
 											title={`Dificuldade: ${diff}`}
@@ -134,6 +170,10 @@ export default function Tasks() {
 											<h3>
 												{routine} | {diff}
 											</h3>
+
+											{task.completed ? undefined :
+											<span className="check-btn" 
+											onClick={() => completeTask(index)}>✔</span>}
 
 											<button
 												className="remove-btn"

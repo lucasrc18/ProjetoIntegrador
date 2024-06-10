@@ -138,3 +138,15 @@
 	cursor: pointer;
 	scale: 0.6 0.6;
 }
+
+.check-btn {
+	cursor: pointer;
+	color: #0f870f;
+	font-size: 2rem;
+}
+
+.check-btn:hover {
+	color: #058c05;
+
+	text-shadow: 0px 0px 20px #47be47;
+}
