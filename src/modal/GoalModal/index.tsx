@@ -21,10 +21,12 @@ export default function GoalModal({active, setActive}: ModalPresetType) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setDesc("");
-        setDeadline(undefined);
-        setXP(undefined);
-        setCoins(undefined);
+        if(active){
+            setDesc("");
+            setDeadline(undefined);
+            setXP(undefined);
+            setCoins(undefined);
+        }
     }, [active])
 
     async function addGoal() {

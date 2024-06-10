@@ -78,3 +78,23 @@
 		}
 	}
 }
+
+@media screen and (max-width: 1000px) {
+	#tasks-page {
+		height: 100%;
+		overflow-x: hidden;
+
+		main {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+	
+			gap: 10vh;
+	
+			section#leftSec, section#rightSec {
+				width: 80vw !important;
+				height: 80vh !important;
+			}
+		}
+	}
+}
