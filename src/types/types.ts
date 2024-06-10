@@ -1,8 +1,8 @@
 export type Task = {
     description: string,
-    difficulty: 0 | 1 | 2, // 0 = facil, 1 = medio, 2 = dificil
+    difficulty: 0 | 1 | 2 | undefined, // 0 = facil, 1 = medio, 2 = dificil
     completed: boolean
-    rotina: "diario" | "semanal" | "mensal"
+    rotina: 0 | 1 | 2 | undefined
 }
 
 export type Goal = {

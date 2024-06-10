@@ -79,6 +79,17 @@
 	}
 }
 
+#taskList {
+	font-size: 1.3rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	h1 {
+		background: transparent;
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	#tasks-page {
 		height: 100%;

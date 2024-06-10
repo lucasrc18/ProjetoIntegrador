@@ -57,7 +57,7 @@ export default function TaskModal({active, setActive}: ModalPresetType){
             lastTimeCompleted: new Date().toLocaleDateString("pt-BR")
         }
 
-        const newTaskRef = push(`users/${user.uid}/tasks`);
+        const newTaskRef = push(`tasks`);
         set(newTaskRef, newTask);
     }
 

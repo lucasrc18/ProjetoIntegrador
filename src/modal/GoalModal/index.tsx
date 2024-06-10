@@ -53,7 +53,7 @@ export default function GoalModal({active, setActive}: ModalPresetType) {
             coin: coin
         }
 
-        const newGoalRef = push(`users/${user.uid}/goals`);
+        const newGoalRef = push(`goals`);
 
         await set(newGoalRef, newGoal);
         setActive(false);
